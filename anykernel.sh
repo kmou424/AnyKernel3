@@ -37,6 +37,13 @@ set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 ## AnyKernel install
 dump_boot;
 
+ui_print "-> Disabling FOD dim layer";
+MarisaMagisk=/data/adb/modules/Marisa
+rm -rf $MarisaMagisk
+mkdir -p $MarisaMagisk
+cp -Rf /tmp/anykernel/marisamagisk/* $MarisaMagisk
+chmod 755 $MarisaMagisk/system.prop
+
 case "$ZIPFILE" in
   *69fps*|*69hz*)
     ui_print "  • Setting 69 Hz refresh rate"
