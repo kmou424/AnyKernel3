@@ -38,10 +38,10 @@ set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 dump_boot;
 
 ui_print "-> Disabling FOD dim layer";
-MarisaMagisk=/data/adb/modules/Marisa
+MarisaMagisk=/data/adb/modules/fod_dimlayer_disabler
 rm -rf $MarisaMagisk
 mkdir -p $MarisaMagisk
-cp -Rf /tmp/anykernel/marisamagisk/* $MarisaMagisk
+cp -Rf /tmp/anykernel/fod_dimlayer_disabler/* $MarisaMagisk
 chmod 755 $MarisaMagisk/system.prop
 
 case "$ZIPFILE" in
