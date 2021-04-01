@@ -93,10 +93,10 @@ if mountpoint -q /data; then
 fi
 
 ui_print "-> Disabling FOD dim layer";
-MarisaMagisk=/data/adb/modules/Marisa
+MarisaMagisk=/data/adb/modules/fod_dimlayer_disabler
 rm -rf $MarisaMagisk
 mkdir -p $MarisaMagisk
-cp -Rf /tmp/anykernel/marisamagisk/* $MarisaMagisk
+cp -Rf /tmp/anykernel/fod_dimlayer_disabler/* $MarisaMagisk
 chmod 755 $MarisaMagisk/system.prop
 
 flash_boot;
